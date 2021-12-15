@@ -15,7 +15,7 @@ final class HomepagePresenter extends Nette\Application\UI\Presenter {
 	{
 		$this->database = $database;
 	}
-
+	
 	public function renderDefault(): void
 
 	{
