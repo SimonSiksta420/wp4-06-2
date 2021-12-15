@@ -9,6 +9,13 @@ use Nette\Application\UI\Form;
 
 final class HomepagePresenter extends Nette\Application\UI\Presenter { 
 
+	private Nette\Database\Explorer $database;
+
+	public function __construct(Nette\Database\Explorer $database)
+	{
+		$this->database = $database;
+	}
+
 	public function renderDefault(): void
 
 	{
@@ -16,14 +23,6 @@ final class HomepagePresenter extends Nette\Application\UI\Presenter {
 			->table('posts')
 			->order('created_at DESC')
 			->limit(5);
-
-	}
-
-	private Nette\Database\Explorer $database;
-
-	public function __construct(Nette\Database\Explorer $database)
-	{
-		$this->database = $database;
 	}
 
 } ?> 
